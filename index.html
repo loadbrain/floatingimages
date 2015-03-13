@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>JQuery Floating Images</title>
+        <link href="./css/styles.css" rel="stylesheet">
+    </head>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("jquery", "1.4.2");
+  	google.load("jqueryui", "1.8.0");
+</script>
+    <script type="text/javascript" src="./lib/jquery.floatingimages.min.js"></script>
+    <script type="text/javascript" src="./lib/jquery.timers.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            imgObject = [{
+                imgName: "./images/brasil1.jpg",
+                imgText: "Just simple text",
+                imgLink: "http://www.weberr.de/"
+            }, {
+                imgName: "./images/brasil2.jpg",
+                imgText: "Lorem Ipsum till de far...<br/>Lorem Ipsum till de far..<br/><span style=color:red;>With special chars, utf-8: äüöß...</span>",
+                imgLink: "http://www.weberr.de/"
+            }, {
+                imgName: "./images/brasil3.jpg",
+                imgText: "Lorem Ipsum till de far...<br/>Using a link: <br/><a href='http://jquery.com/' target='_blank' style='color: red;'>Link to JQuery</a>",
+                imgLink: "http://www.weberr.de/"
+            }, {
+                imgName: "./images/brasil4.jpg",
+                imgText: "<h2>Unsing h2 tag</h2>",
+                imgLink: "http://www.weberr.de"
+            }, {
+                imgName: "./images/brasil5.jpg",
+                imgText: "Lorem Ipsum till de far...<br/>Lorem Ipsum till de far...<br/><span style=color:red;>with span style color red</span>",
+                imgLink: "http://www.weberr.de"
+            }, {
+                imgName: "./images/brasil6.jpg",
+                imgText: "Lorem Ipsum till de far...<br/><span style='color: #6FFF75; font-family:Times;'>with span style color #6FFF75, font times</span>",
+                imgLink: "http://www.weberr.de/"
+            }, ];
+            
+            $('#container').floatingimages({
+                imgObject: imgObject,
+                clondedImageBorder: '2px dotted black',
+                containerWidth: '300px',
+                containerHeigth: '200px',
+                timer: 3000,
+                smallImageWidth: 150,
+                smallImageHeight: 95,
+                realImageWidth: '300px',
+                realImageHeight: '195px',
+                columnsPerRow: 2
+            });
+        });
+    </script>
+    <body>
+        <div id="container">
+            <div id="viewPortPhoto">
+                <div class="hint">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
